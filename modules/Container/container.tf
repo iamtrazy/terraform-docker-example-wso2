@@ -1,9 +1,10 @@
 resource "docker_container" "container" {
-  name    = var.container_name
-  image   = var.image_id
-  restart = var.restart_policy
-  env     = var.env_vars
-  wait    = var.should_wait
+  name         = var.container_name
+  image        = var.image_id
+  restart      = var.restart_policy
+  env          = var.env_vars
+  wait         = var.should_wait
+  wait_timeout = var.healthcheck_wait_timeout
 
   dynamic "healthcheck" {
     for_each = var.healthcheck != null ? [var.healthcheck] : []

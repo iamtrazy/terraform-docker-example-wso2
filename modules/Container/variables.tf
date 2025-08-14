@@ -26,6 +26,12 @@ variable "should_wait" {
   default     = false
 }
 
+variable "healthcheck_wait_timeout" {
+  description = "Timeout for cnotainer to wait until health check completes"
+  type        = number
+  default     = 320
+}
+
 variable "healthcheck" {
   description = "A single healthcheck configuration object. Omitted if null."
   type = object({

@@ -72,13 +72,13 @@ variable "mysql_container_healthcheck_test" {
 variable "mysql_container_healthcheck_retries" {
   description = "MySQL container healthchek retries"
   type        = number
-  default     = 10
+  default     = 20
 }
 
 variable "mysql_container_healthcheck_timeout" {
   description = "MySQL container healthcheck timeout"
   type        = string
-  default     = "20s"
+  default     = "120s"
 }
 
 variable "mysql_container_volume_mountpath" {
@@ -109,7 +109,6 @@ variable "flaskapp_container_config_hostpath" {
   description = "Host path to mount Flask app config"
   type        = string
 }
-
 
 variable "caddy_container_name" {
   description = "Container name of the Caddy container"
